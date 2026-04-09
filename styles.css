@@ -1699,11 +1699,22 @@ summary:focus-visible {
   padding: 1.25rem 1rem 1.35rem;
 }
 
+/* Contenedor interno: evita que la cuadrícula se aplaste a una sola columna por herencia */
+.org-chart__layout {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  max-width: 58rem;
+  margin-inline: auto;
+}
+
 .org-chart__head {
   display: flex;
   justify-content: center;
   margin-bottom: 1.3rem;
   position: relative;
+  width: 100%;
 }
 
 .org-chart__head::after {
@@ -1727,60 +1738,75 @@ summary:focus-visible {
   margin-inline: auto;
 }
 
-.org-chart__tier {
-  position: relative;
+/* Filas del organigrama: grid explícito (sin auto-fit, que en pantallas medias dejaba una sola columna) */
+.org-chart .org-chart__tier {
   display: grid;
-  gap: 0.8rem;
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  gap: 0.85rem;
   align-items: stretch;
+  box-sizing: border-box;
 }
 
-.org-chart__tier--mid {
-  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+.org-chart .org-chart__tier--mid {
+  grid-template-columns: 1fr;
   margin-bottom: 0.85rem;
+  padding-top: 0.35rem;
 }
 
-@media (min-width: 720px) {
-  .org-chart__tier--mid {
+@media (min-width: 640px) {
+  .org-chart .org-chart__tier--mid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .org-chart__tier--mid::before {
+  .org-chart .org-chart__tier--mid::before {
     content: "";
     position: absolute;
-    left: 8%;
-    right: 8%;
-    top: -0.45rem;
+    left: 6%;
+    right: 6%;
+    top: -0.35rem;
     height: 2px;
     background: rgba(13, 148, 136, 0.35);
   }
 }
 
-/* Fila inferior: entrega bajo recepción | hueco | académica bajo control de calidad */
-.org-chart__tier--bottom {
+/* Entrega | hueco | Área académica (alineado a recepción / control de calidad en escritorio) */
+.org-chart .org-chart__tier--bottom {
   grid-template-columns: 1fr;
-  max-width: 56rem;
-  margin-inline: auto;
+  max-width: 100%;
+  margin-inline: 0;
+  padding-top: 0.75rem;
+  margin-top: 0.25rem;
+  border-top: 1px dashed rgba(13, 148, 136, 0.22);
 }
 
-@media (min-width: 720px) {
-  .org-chart__tier--bottom {
-    grid-template-columns: 1fr minmax(2rem, 1.2fr) 1fr;
+@media (min-width: 640px) {
+  .org-chart .org-chart__tier--bottom {
+    grid-template-columns: minmax(0, 1fr) minmax(1.5rem, 1fr) minmax(0, 1fr);
     align-items: start;
   }
 }
 
 .org-chart__tier-spacer {
-  min-height: 0.5rem;
+  min-height: 0.25rem;
   pointer-events: none;
 }
 
-@media (min-width: 720px) {
+@media (max-width: 639px) {
   .org-chart__tier-spacer {
-    min-height: 1rem;
+    display: none;
+  }
+}
+
+@media (min-width: 640px) {
+  .org-chart__tier-spacer {
+    min-height: 1.25rem;
   }
 }
 
 .org-node {
+  min-width: 0;
   border: 1px solid rgba(13, 80, 110, 0.12);
   border-radius: var(--radius);
   background: linear-gradient(160deg, rgba(255, 255, 255, 0.96), rgba(236, 248, 253, 0.9));
