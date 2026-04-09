@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Matriz de prioridades del laboratorio." />
+  <title>Prioridades — Laboratorio Clínico Montaña de Huamantla</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#contenido-principal">Ir al contenido</a>
+
+  <header class="site-header">
+    <div class="topbar">
+      <div class="container topbar__inner">
+        <p class="topbar__text">Atención de laboratorio clínico en Huamantla, Tlaxcala.</p>
+        <ul class="topbar__list" aria-label="Acciones rápidas">
+          <li><a href="mailto:contacto@labmontanahuamantla.com">contacto@labmontanahuamantla.com</a></li>
+          <li><a href="tel:+522761234567">+52 276 123 4567</a></li>
+          <li><a href="contacto.html">Solicitar información</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="site-header__inner">
+      <a href="index.html" class="logo">
+        <span class="logo__mark" aria-hidden="true"></span>
+        <span class="logo__text">
+          <span class="logo__name">Laboratorio Clínico</span>
+          <span class="logo__sub">Montaña de Huamantla</span>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Principal">
+        <button type="button" class="nav__toggle" aria-expanded="false" aria-controls="nav-menu">
+          <span class="nav__toggle-bar"></span>
+          <span class="nav__toggle-bar"></span>
+          <span class="nav__toggle-bar"></span>
+          <span class="visually-hidden">Menú</span>
+        </button>
+        <ul id="nav-menu" class="nav__list">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="vision-mision.html">Visión y misión</a></li>
+          <li><a href="metas.html">Metas</a></li>
+          <li><a href="objetivos.html">Objetivos</a></li>
+          <li><a href="organigrama.html">Organigrama</a></li>
+          <li><a href="reglamento.html">Reglamento</a></li>
+          <li><a href="descripcion.html">Descripción</a></li>
+          <li><a href="foda.html">FODA</a></li>
+          <li><a href="prioridades.html" aria-current="page">Prioridades</a></li>
+          <li><a href="kpi.html">Indicadores KPI</a></li>
+          <li><a href="phva.html">Ciclo PHVA</a></li>
+          <li><a href="conclusion.html">Conclusión</a></li>
+          <li><a href="referencias.html">Referencias</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido-principal">
+    <header class="page-intro">
+      <div class="container">
+        <p class="page-intro__crumb"><a href="index.html">Inicio</a> / Prioridades</p>
+        <h1 class="page-intro__title">Matriz de prioridades</h1>
+      </div>
+    </header>
+
+    <section class="section section--alt">
+      <div class="container">
+        <header class="section__header">
+          <h2 class="visually-hidden">Cuatro cuadrantes</h2>
+          <p class="section__intro">Clasificación por urgencia e importancia para la calidad y la seguridad.</p>
+        </header>
+        <div class="matrix-grid">
+          <article class="card matrix matrix--q1">
+            <h3>Cuadrante 1 — Hazlo de inmediato</h3>
+            <p class="matrix__tag">Importante y urgente</p>
+            <ul>
+              <li>Entregar resultados críticos.</li>
+              <li>Resolver desviación de control de calidad que impide reportar pruebas.</li>
+              <li>Corregir error de identificación de muestra o tubo mal etiquetado.</li>
+              <li>Responder a incidente (derrame, exposición, alarma de equipo).</li>
+              <li>Atender queja o incidente con muestra de paciente.</li>
+              <li>Calibrar y verificar equipo fuera de tolerancia que bloquea pruebas.</li>
+            </ul>
+          </article>
+          <article class="card matrix matrix--q2">
+            <h3>Cuadrante 2 — Planifícalo y hazlo bien</h3>
+            <p class="matrix__tag">Importante, no urgente</p>
+            <ul>
+              <li>Mantenimiento preventivo de equipos (mensual o trimestral).</li>
+              <li>Capacitación del personal en nuevas normas o procedimientos.</li>
+              <li>Controles de calidad preventivos del día.</li>
+              <li>Revisar el procedimiento antes de procesar muestras nuevas.</li>
+              <li>Validar y verificar nuevo método o reactivo a implementar.</li>
+              <li>Pedir cotizaciones y planificar compra de reactivos con 1 o 2 meses de anticipación.</li>
+            </ul>
+          </article>
+          <article class="card matrix matrix--q3">
+            <h3>Cuadrante 3 — Hazlo rápido</h3>
+            <p class="matrix__tag">Urgente, no importante</p>
+            <ul>
+              <li>Responder mensajes o notificaciones rutinarias del sistema virtual.</li>
+              <li>Registrar conteo simple de muestras procesadas.</li>
+              <li>Ordenar o limpiar la interfaz del programa (iconos, ventanas).</li>
+              <li>Exportar reportes básicos que no son urgentes.</li>
+            </ul>
+          </article>
+          <article class="card matrix matrix--q4">
+            <h3>Cuadrante 4 — Ignóralo o pospónlo</h3>
+            <p class="matrix__tag">No urgente ni importante</p>
+            <ul>
+              <li>Cambiar colores, temas o fondo del dashboard virtual.</li>
+              <li>Explorar módulos o funciones extras que no son parte de la simulación actual.</li>
+              <li>Personalizar iconos o perfiles que no afectan la simulación.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer site-footer--simple">
+    <div class="container site-footer__inner">
+      <p class="site-footer__brand">Laboratorio Clínico Montaña de Huamantla</p>
+      <p class="site-footer__tagline">
+        Diagnóstico oportuno, seguridad del paciente y mejora continua.
+      </p>
+      <p class="site-footer__contact-line">
+        <a href="mailto:contacto@labmontanahuamantla.com">contacto@labmontanahuamantla.com</a>
+        <span class="site-footer__sep" aria-hidden="true">·</span>
+        <a href="tel:+522761234567">+52 276 123 4567</a>
+        <span class="site-footer__sep" aria-hidden="true">·</span>
+        <span>Huamantla, Tlaxcala</span>
+      </p>
+      <nav class="site-footer__nav" aria-label="Enlaces del sitio">
+        <a href="vision-mision.html">Visión</a>
+        <a href="kpi.html">KPI</a>
+        <a href="phva.html">PHVA</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="reglamento.html">Reglamento</a>
+      </nav>
+      <p class="site-footer__copyright">© 2026 Laboratorio Clínico Montaña de Huamantla. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
