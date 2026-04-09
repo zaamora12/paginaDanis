@@ -1717,27 +1717,66 @@ summary:focus-visible {
   background: rgba(13, 148, 136, 0.35);
 }
 
-.org-chart__branches {
+.org-chart__source {
+  margin: 0 0 1rem;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+  text-align: center;
+  max-width: 40rem;
+  margin-inline: auto;
+}
+
+.org-chart__tier {
   position: relative;
   display: grid;
   gap: 0.8rem;
-  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
   align-items: stretch;
 }
 
-@media (min-width: 880px) {
-  .org-chart__branches {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+.org-chart__tier--mid {
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  margin-bottom: 0.85rem;
+}
+
+@media (min-width: 720px) {
+  .org-chart__tier--mid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .org-chart__branches::before {
+  .org-chart__tier--mid::before {
     content: "";
     position: absolute;
-    left: 12.5%;
-    right: 12.5%;
+    left: 8%;
+    right: 8%;
     top: -0.45rem;
     height: 2px;
     background: rgba(13, 148, 136, 0.35);
+  }
+}
+
+/* Fila inferior: entrega bajo recepción | hueco | académica bajo control de calidad */
+.org-chart__tier--bottom {
+  grid-template-columns: 1fr;
+  max-width: 56rem;
+  margin-inline: auto;
+}
+
+@media (min-width: 720px) {
+  .org-chart__tier--bottom {
+    grid-template-columns: 1fr minmax(2rem, 1.2fr) 1fr;
+    align-items: start;
+  }
+}
+
+.org-chart__tier-spacer {
+  min-height: 0.5rem;
+  pointer-events: none;
+}
+
+@media (min-width: 720px) {
+  .org-chart__tier-spacer {
+    min-height: 1rem;
   }
 }
 
@@ -1755,30 +1794,44 @@ summary:focus-visible {
 }
 
 .org-node__photo {
-  width: 62px;
-  height: 62px;
-  margin: 0 auto 0.55rem;
+  width: 5.25rem;
+  height: 5.25rem;
+  margin: 0 auto 0.6rem;
   border-radius: 50%;
-  border: 2px dashed rgba(13, 148, 136, 0.35);
-  background: linear-gradient(140deg, rgba(20, 184, 166, 0.14), rgba(2, 132, 199, 0.12));
+  border: 2px solid rgba(13, 148, 136, 0.28);
+  background: linear-gradient(140deg, rgba(20, 184, 166, 0.12), rgba(2, 132, 199, 0.1));
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.72rem;
-  font-weight: 700;
-  color: #0f766e;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.org-node__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .org-node__title {
-  margin: 0 0 0.25rem;
+  margin: 0 0 0.3rem;
   font-size: 0.96rem;
   line-height: 1.25;
   color: var(--text);
 }
 
+.org-node__person {
+  margin: 0 0 0.35rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: #134e4a;
+}
+
 .org-node__subtitle {
   margin: 0;
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   color: var(--text-muted);
   line-height: 1.4;
 }
