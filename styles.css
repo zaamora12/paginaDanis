@@ -2585,6 +2585,22 @@ summary:focus-visible {
 }
 
 /* Entrevista laboral — embed Canva */
+.canva-embed-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.canva-embed__block-title {
+  margin: 0;
+  padding: 1rem 1.25rem 0.85rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.02em;
+  border-bottom: 1px solid var(--border);
+}
+
 .canva-embed {
   padding: 0;
   overflow: hidden;
